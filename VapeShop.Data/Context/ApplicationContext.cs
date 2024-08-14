@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using VapeShop.Data.Entities;
 
 namespace VapeShop.Data.Context
 {
@@ -10,6 +11,7 @@ namespace VapeShop.Data.Context
             
         }
 
+        DbSet<User> Users { get; set; }
 
     }
 }
