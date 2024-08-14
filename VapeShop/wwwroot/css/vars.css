@@ -1,0 +1,16 @@
+:root {
+	--index: calc(1vw + 1vh);
+	--gallery-gap: calc(var(--index) * 4.5)
+
+}
+
+/* Colors */
+
+:root {
+	--color-text: #cdc6c3;
+	--color-text-lite: #fafafa;
+	--color-back-gray: gray;
+	--color-background: #2f2e2e;
+	--color-akcent: #ff0404;
+	--color-black: rgba(3,3,3);
+}

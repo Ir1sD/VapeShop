@@ -1,0 +1,38 @@
+﻿
+@{
+	ViewData["Title"] = "Регистрация";
+}
+
+<link rel="stylesheet" href="~/css/login.css">
+
+<body>
+	<div class="container">
+		<section class="content">
+			<div class="homeblock">
+				<a class="homelink" asp-action="Login">Назад</a>
+			</div>
+			
+			<form asp-action="Register" asp-controller="Home">
+				<h1>@ViewData["Title"]</h1>
+				
+				<input type="text" placeholder="Фамилия" />
+				
+				<input type="text" placeholder="Имя"/>
+
+				<input type="text" placeholder="Отчество"/>
+
+				<input type="tel" placeholder="Телефон"/>
+
+				<input type="tel" placeholder="Пароль"/>
+
+				<div>
+					<input type="submit" value="Регистрация" />
+					<div class="links-block">
+					</div>
+				</div>
+			</form>
+		</section>
+	</div>
+</body>
+
+

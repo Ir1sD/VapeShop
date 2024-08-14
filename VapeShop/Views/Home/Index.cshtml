@@ -1,8 +1,95 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<html lang="en">
+<head>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+	<title>Главная</title>
+	<script src="~/lib/gsap/gsap.min.js" defer></script>
+	<script src="~/lib/gsap/ScrollSmoother.min.js" defer></script>
+	<script src="~/lib/gsap/ScrollTrigger.min.js" defer></script>
+
+	<link rel="stylesheet" href="~/css/site.css">
+	<script src="~/js/site.js" defer></script>
+
+</head>
+<body>
+
+	<div class="top-line">
+		<nav class="main-menu">
+			<ul>
+				<li class="active"><a href="#">Главная</a></li>
+				<li><a href="#">Информация</a></li>
+				<li><a href="#">Каталог</a></li>
+			</ul>
+		</nav>
+		<a class="button button--top" asp-action="LoginView" asp-controller="Account">Авторизация</a>
+	</div>
+
+	<div class="wrapper">
+		<div class="content">
+
+			<div class="hero-section">
+				<img data-speed=".6" class="hero" src="~/res/hero.png" alt="Alt" >
+				<div class="container">
+					<div data-speed=".75" class="main-header">
+						<h1 class="main-title">Crazy Vape Shop</h1>
+					</div>
+				</div>
+			</div>
+		
+			<div class="portfolio">
+				<div class="container">
+					<main class="gallery">
+	
+						<div data-speed=".9" class="gallery__left">
+							
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Вейпы и POD-системы</h2>
+								<p class="text-block__p">Главная вещь в вашем арсенале</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/2.jpg" alt="Alt">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Испарители и катриджи</h2>
+								<p class="text-block__p">Куда сейчас без них</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/4.jpg" alt="Alt">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Табак для кальянов</h2>
+								<p class="text-block__p">Как всегда насыщенный вкус</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/6.jpg" alt="Alt">
+						</div>
+
+						<div data-speed="1.1" class="gallery__right">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Житкости</h2>
+								<p class="text-block__p">Топливо для вашего парения</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/1.jpg" alt="Alt">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Одноразки</h2>
+								<p class="text-block__p">Прекрасная альтернатива POD-системам</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/3.jpg" alt="Alt">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">Кальяны</h2>
+								<p class="text-block__p">Незаменимы при провождении вечера с друзьями</p>
+							</div>
+							<img class="gallery__item" src="~/res/vitrina/5.jpg" alt="Alt">
+
+						</div>
+
+					</main>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
+

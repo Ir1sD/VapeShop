@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop", "VapeShop\VapeShop.csproj", "{1F496C3A-7760-4A81-985D-2CABFE3EDAC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop.Web", "VapeShop\VapeShop.Web.csproj", "{1F496C3A-7760-4A81-985D-2CABFE3EDAC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop.Core", "VapeShop.Core\VapeShop.Core.csproj", "{D0ECDDE4-D079-491E-80A8-4406F2393580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VapeShop.Data", "VapeShop.Data\VapeShop.Data.csproj", "{935157A8-C918-4DB7-89FA-09C37899C3AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{1F496C3A-7760-4A81-985D-2CABFE3EDAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F496C3A-7760-4A81-985D-2CABFE3EDAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F496C3A-7760-4A81-985D-2CABFE3EDAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0ECDDE4-D079-491E-80A8-4406F2393580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0ECDDE4-D079-491E-80A8-4406F2393580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0ECDDE4-D079-491E-80A8-4406F2393580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0ECDDE4-D079-491E-80A8-4406F2393580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935157A8-C918-4DB7-89FA-09C37899C3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935157A8-C918-4DB7-89FA-09C37899C3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935157A8-C918-4DB7-89FA-09C37899C3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935157A8-C918-4DB7-89FA-09C37899C3AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

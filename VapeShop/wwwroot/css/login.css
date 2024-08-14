@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	background-image: url(../res/Login.jpg);
+	color: #000;
+	font: 14px Arial;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+h1,h2,h3,h4,h5,h6{ color:#563D64;}
+
+small{ font-size:10px;}
+b, strong{ font-weight:bold;}
+a{ text-decoration: none; }
+
+form:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.container { margin: 25px auto; position: relative; width: 900px; margin-top: 20vh;}
+
+.content {
+	border: 1px solid #c4c6ca;
+	margin: 0 auto;
+	padding: 25px 0 0;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	background-color: rgba(0, 0, 0, .3);
+	width: 400px;
+}
+.content h1 {
+	color: white;
+	font: bold 25px Helvetica, Arial, sans-serif;
+	margin: 10px 0 30px;
+}
+
+.content form { margin: 0 20px; position: relative }
+.content form input[type="text"],
+.content form input[type="password"],
+.content form input[type="tel"] {
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+	transition: all 0.5s ease;
+	background: #eae7e7;
+	border: 1px solid #c8c8c8;
+	color: #777;
+	font: 13px Helvetica, Arial, sans-serif;
+	padding: 15px 10px 15px 40px;
+	width: 80%;
+}
+#username { 
+	background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+	background-position: 10px 10px !important 
+}
+
+#password { 
+	background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+	background-position: 10px -53px !important 
+}
+
+.content form input[type="submit"] {
+	border-radius: 30px;
+	border: 2px solid white;
+	color: white;
+	cursor: pointer;
+	font: bold 15px Helvetica, Arial, sans-serif;
+	height: 35px;
+	left: 35%;
+	position: absolute;
+	width: 120px;
+}
+
+.content form div a {
+	color: white;
+    float: right;
+    font-size: 14px;
+		margin-right: 20px;
+    text-decoration: underline;
+}
+
+.links-block {
+	display: block;
+	position: relative;
+	width: 80%;
+	height: 10%;
+	left: 10%;
+	top: 50px;
+}
+
+.ErrorMes {
+	position: relative;
+	display: block;
+	width: 80%;
+	left: 10%;
+	padding: 10px , 10px;
+	height: 30px;
+}
+
+.ErrorLabel {
+	display: block;
+	position: absolute;
+	color: red;
+	text-decoration: none;
+}
+
+.homeblock {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.homelink {
+	color: white;
+	font-size: 14px;
+  text-decoration: underline;
+}
+
