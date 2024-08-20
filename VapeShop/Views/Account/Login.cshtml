@@ -1,41 +1,82 @@
-﻿
+﻿@using VapeShop.Web.Requests.Users;
+
+@model UserLoginRequest;
+
 @{
-	ViewData["Title"] = "Авторизация";
+    
 }
 
-<link rel="stylesheet" href="~/css/login.css">
+<link rel="stylesheet" href="~/css/auto.css"> 
 
-<body>
-	<div class="container">
-		<section class="content">
-			<div class="homeblock">
-				<a asp-action="Index" class="homelink">Назад</a>
-			</div>
+<div class="login-button">
+    <img src="~/res/login-w-icon.png"></img>
+</div>
+<div class="container">
+    <h1>Авторизация</h1>
+    <span class="close-btn">
+        <img src="~/res/closeBtn.png"></img>
+    </span>
 
-			<form asp-action="Autorization" asp-controller="Home">
-				<h1>@ViewData["Title"]</h1>
-				<div>
-					<input type="text" placeholder="Почта/Телефон" id="username" name="number"/>
-				</div>
-				<div class="ErrorMes">
-					
-				</div>
+    
+    <form asp-action="Index">
+        <p>
+            <input type="text" asp-for="Email" placeholder="Почта" name="Email" />
+            <span asp-validation-for="Email" />
+        </p>
 
-				<div>
-					<input type="password" placeholder="Пароль" id="password" name="password"/>
-				</div>
-				<div class="ErrorMes">
-					
-				</div>
+        <p>
+            <input type="password" asp-for="Password" placeholder="Пароль" name="Password" />
+            <span asp-validation-for="Password" />
+        </p>
 
-				<div>
-					<input type="submit" value="Войти" />
-					<div class="links-block">
-						<a href="#">Забыли пароль?</a>
-						<a asp-action="RegisterView">Нет аккаута?</a>
-					</div>
-				</div>
-			</form>
-		</section>
-	</div>
-</body>
+        <input type="submit" value="Войти" class="submit-btn">
+        
+    </form>
+
+    <div id="remember-container">
+        <span class="forgotten">Забыли пароль?</span>
+        <span id="register" class="forgotten">В первый раз?</span>
+    </div>
+</div>
+
+<div class="register-container">
+    <h1>Регистрация</h1>
+    <span class="close-btn">
+        <img src="~/res/closeBtn.png"></img>
+    </span>
+
+    <form>
+        <p>
+            <input type="text" asp-for="FirstName" placeholder="Фамилия" name="FirstName" />
+            <span asp-validation-for="FirstName" />
+        </p>
+
+        <p>
+            <input type="text" asp-for="Name" placeholder="Имя" name="Name" />
+            <span asp-validation-for="Name" />
+        </p>
+
+        <p>
+            <input type="date" asp-for="DateBithDay" placeholder="Дата рождения" name="DateBithDay" />
+            <span asp-validation-for="DateBithDay" />
+        </p>
+
+        <p>
+            <input type="email" asp-for="Email" placeholder="Почта" name="Email" />
+            <span asp-validation-for="Email" />
+        </p>
+
+        <p>
+            <input type="password" asp-for="Password" placeholder="Пароль" name="Password" />
+            <span asp-validation-for="Password" />
+        </p>
+
+        <input type="submit" value="Регистрация" class="submit-btn">
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/app.js"></script>
+<script src="~/lib/TweenMax.min.js"></script>

@@ -1,11 +1,17 @@
 using Microsoft.EntityFrameworkCore;
+using VapeShop.Core.Abstractions.Users;
 using VapeShop.Data.Context;
+using VapeShop.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+
+
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+
 
 builder.Services.AddControllersWithViews();
 

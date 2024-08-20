@@ -4,11 +4,13 @@ using VapeShop.Data.Entities;
 
 namespace VapeShop.Data.Configurations
 {
-	public class UserConfiguration : IEntityTypeConfiguration<User>
+	public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
 	{
-		public void Configure(EntityTypeBuilder<User> builder)
+		public void Configure(EntityTypeBuilder<UserEntity> builder)
 		{
 			builder.HasKey(x => x.Id);
+
+			builder.ToTable("Users");
 		}
 	}
 }
