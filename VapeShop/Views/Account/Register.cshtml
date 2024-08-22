@@ -1,0 +1,50 @@
+﻿@using VapeShop.Web.Requests.Users;
+
+@model RegisterUserRequest;
+
+@{
+
+}
+
+<link rel="stylesheet" href="~/css/login.css">
+
+<a class="closeModal" asp-action="Index" asp-controller="Home"></a>
+
+<div class="container" style="display: block">
+    <h1>Регистрация</h1>
+    
+    <form asp-action="Register">
+
+        <input type="hidden" value="@Model.Phone" name="Phone">
+        <p>
+            <input type="text" asp-for="FirstName" placeholder="Фамилия" name="FirstName" />
+            <span asp-validation-for="FirstName" />
+        </p>
+
+        <p>
+            <input type="text" asp-for="Name" placeholder="Имя" name="Name" />
+            <span asp-validation-for="Name" />
+        </p>
+
+        <p>
+            <input type="text" asp-for="LastName" placeholder="Отчество" name="LastName" />
+            <span asp-validation-for="LastName" />
+        </p>
+
+        <p>
+            <input type="date" asp-for="DateBithDay" name="DateBithDay" />
+            <span asp-validation-for="DateBithDay" />
+        </p>
+
+        <input type="submit" value="Регистрация" class="submit-btn">
+
+    </form>
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/app.js"></script>
+<script src="~/lib/TweenMax.min.js"></script>
+

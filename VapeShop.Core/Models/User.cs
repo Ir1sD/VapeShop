@@ -11,8 +11,8 @@ namespace VapeShop.Core.Models
     /// </summary>
     public class User
     {
-        public const int MAX_LENGTH_NAME = 40;
-        public const int MIN_LENGTH_PASSWORD = 6;
+        public const int MAX_LENGTH_NAME = 30;
+        public const int LENGTH_CODE = 6;
         private User()
         {
 
@@ -34,14 +34,19 @@ namespace VapeShop.Core.Models
         public string Name { get; private set; } = string.Empty;
 
         /// <summary>
-        /// Почта
+        /// Отчество
         /// </summary>
-        public string Email { get; private set; } = string.Empty;
+        public string LastName { get; private set; } = string.Empty;
 
         /// <summary>
-        /// Хеш пароля
+        /// Телефон
         /// </summary>
-        public string Password { get; private set; } = string.Empty;
+        public string Phone { get; private set; } = string.Empty;
+
+        /// <summary>
+        /// Дата регистрации
+        /// </summary>
+        public DateTime DateReg { get; private set; }
 
         /// <summary>
         /// Дата рождения
@@ -59,21 +64,25 @@ namespace VapeShop.Core.Models
         /// <param name="password"> Хеш пароля</param>
         /// <param name="dateBithDay">Дата рождения</param>
         /// <returns>Объект пользователя</returns>
-        public static User New(Guid id , 
+        public static User New(
+            Guid id , 
             string firstName , 
             string name , 
-            string email, 
-            string password, 
-            DateTime dateBithDay)
+            string lastName,
+            string phone,
+            DateTime dateBithDay,
+            DateTime dateReg)
         {
             var user = new User()
             {
                 Id = id,
                 FirstName = firstName,
                 Name = name,
-                Email = email,
-                Password = password,
-                DateBithDay = dateBithDay
+                LastName = lastName,
+                Phone = phone,
+                DateBithDay = dateBithDay,
+                DateReg = dateReg
+
             };
 
             return user;

@@ -3,27 +3,25 @@
 @model LoginUserRequest;
 
 @{
-    
+
 }
 
 <link rel="stylesheet" href="~/css/login.css">
 
 <a class="closeModal" asp-action="Index" asp-controller="Home"></a>
-<div class="login-button">
-    <img src="~/res/login-w-icon.png"></img>
-</div>
-<div class="container">
-    <h1>Авторизация</h1>
-    
-    <form asp-action="LoginIn">
 
+<div class="container" style="display: block">
+    <h1>Авторизация</h1>
+   
+    <form asp-action="LoginStep2">
+        <input type="hidden" name="Id" value="@Model.Id">
         <p>
-            <input type="text" asp-for="Phone" placeholder="Номер телефона" name="Phone" />
-            <span asp-validation-for="Phone" />
+            <input type="text" asp-for="Code" placeholder="Код из смс" name="Code" />
+            <span asp-validation-for="Code" />
         </p>
 
-        <input type="submit" value="Далее" class="submit-btn">
-        
+        <input type="submit" value="Авторизоваться" class="submit-btn">
+
     </form>
 
 </div>
@@ -33,3 +31,4 @@
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/js/app.js"></script>
 <script src="~/lib/TweenMax.min.js"></script>
+

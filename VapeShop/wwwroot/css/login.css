@@ -1,0 +1,140 @@
+﻿@import url(../css/vars.css);
+
+html {
+    background: url(../res/Login.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.login-button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(3,3,3, 1);
+    overflow: hidden;
+    opacity: 0.65;
+    box-shadow: 10px 10px 30px #000;
+    transition: all 0.2s ease-in-out;
+    /* display: none; */
+}
+
+    .login-button:hover {
+        opacity: 0.9;
+    }
+
+.container {
+    position: relative;
+    top: 30%;
+    margin: auto;
+    width: 260px;
+    border-radius: 5px;
+    background: rgba(3,3,3,0.7);
+    box-shadow: 1px 1px 50px #000;
+    display: none;
+}
+
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    top: 5px;
+    text-align: center;
+    font-size: 26px;
+    color: #ddd;
+}
+
+.submit-btn,
+input {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 12px auto;
+    margin-bottom: 0px;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(59, 59, 59, 0.9);
+    transition: all 0.2s ease-in-out;
+}
+
+    input::placeholder {
+        color: white;
+        opacity: 0.7;
+        font-size: 15px;
+    }
+
+.submit-btn {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    background: var(--color-akcent);
+    opacity: 0.7;
+}
+
+    .submit-btn:hover {
+        cursor: pointer;
+        opacity: 1;
+        border: white, solid, 2px;
+    }
+
+.field-validation-error {
+    color: red;
+    position: relative;
+    font-family: 'open sans condensed', sans-serif;
+    left: 10%;
+    font-size: 12px;
+}
+
+.input-validation-error {
+    border: red, solid, 2px;
+}
+
+.closeModal {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+}
+
+    .closeModal::before,
+    .closeModal::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: #000;
+    }
+
+    .closeModal::before {
+        transform: rotate(45deg);
+    }
+
+    .closeModal::after {
+        transform: rotate(-45deg);
+    }

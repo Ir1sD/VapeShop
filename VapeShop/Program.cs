@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using VapeShop.Core.Abstractions.Users;
+using VapeShop.Core.Services;
 using VapeShop.Data.Context;
 using VapeShop.Data.Repositories;
 
@@ -11,7 +12,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServe
 
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
-
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllersWithViews();
 
