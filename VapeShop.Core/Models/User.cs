@@ -11,8 +11,16 @@ namespace VapeShop.Core.Models
     /// </summary>
     public class User
     {
+        /// <summary>
+        /// Максимально допустимое значение для фамилии, имени и отчеству
+        /// </summary>
         public const int MAX_LENGTH_NAME = 30;
+
+        /// <summary>
+        /// Длинна проверочного кода
+        /// </summary>
         public const int LENGTH_CODE = 6;
+
         private User()
         {
 
@@ -21,7 +29,7 @@ namespace VapeShop.Core.Models
         /// <summary>
         /// Идентификатор
         /// </summary>
-        public Guid Id { get; private set; }
+        public long Id { get; private set; }
 
         /// <summary>
         /// Фамилия
@@ -57,32 +65,31 @@ namespace VapeShop.Core.Models
         /// <summary>
         /// Получить пользователя
         /// </summary>
-        /// <param name="id">Идентификатор</param>
         /// <param name="firstName">Фамилия</param>
         /// <param name="name">Имя</param>
         /// <param name="email">Почта</param>
         /// <param name="password"> Хеш пароля</param>
         /// <param name="dateBithDay">Дата рождения</param>
+        /// <param name="Id">Идентификатор</param>
         /// <returns>Объект пользователя</returns>
         public static User New(
-            Guid id , 
             string firstName , 
             string name , 
             string lastName,
             string phone,
             DateTime dateBithDay,
-            DateTime dateReg)
+            DateTime dateReg,
+            long Id = 0)
         {
             var user = new User()
             {
-                Id = id,
                 FirstName = firstName,
                 Name = name,
                 LastName = lastName,
                 Phone = phone,
                 DateBithDay = dateBithDay,
-                DateReg = dateReg
-
+                DateReg = dateReg,
+                Id = Id
             };
 
             return user;

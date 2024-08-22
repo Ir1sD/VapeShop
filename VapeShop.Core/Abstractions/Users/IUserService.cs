@@ -10,7 +10,10 @@ namespace VapeShop.Core.Abstractions.Users
 {
     public interface IUserService
     {
-        public Task<User> Get(string Phone);
-        public Task Register(User user);
+        public Task<User> GetByPhone(string Phone);
+        public Task<User> GetById(long Id);
+        public Task Add(User user);
+        public Task Authorization(User user);
+        public Task<User> GetUser();
     }
 }

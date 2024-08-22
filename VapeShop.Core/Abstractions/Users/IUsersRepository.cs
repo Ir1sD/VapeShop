@@ -6,7 +6,8 @@ namespace VapeShop.Core.Abstractions.Users
     public interface IUsersRepository
     {
         public Task<List<User>> GetList();
-        public Task Register(User user);
-        public Task<User> Get(string Phone);
+        public Task Add(User user);
+        public Task<User> GetByPhone(string Phone);
+        public Task<User> GetById(long UserId);
     }
 }

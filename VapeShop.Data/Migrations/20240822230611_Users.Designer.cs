@@ -12,8 +12,8 @@ using VapeShop.Data.Context;
 namespace VapeShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240814223319_User")]
-    partial class User
+    [Migration("20240822230611_Users")]
+    partial class Users
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,17 +25,25 @@ namespace VapeShop.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("VapeShop.Data.Entities.User", b =>
+            modelBuilder.Entity("VapeShop.Data.Entities.UserEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("Email")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("DateBithDay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateReg")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -43,7 +51,7 @@ namespace VapeShop.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

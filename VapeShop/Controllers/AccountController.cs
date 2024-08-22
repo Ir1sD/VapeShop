@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using VapeShop.Core.Abstractions.Users;
-using VapeShop.Core.Models;
 using VapeShop.Web.Requests.Users;
 using VapeShop.Web.Responses.Users;
 
@@ -10,8 +10,8 @@ namespace VapeShop.Web.Controllers
 	public class AccountController : Controller
 	{
         private IUserService userService;
-
-        public AccountController(IUserService userService)
+        
+        public AccountController(IUserService userService )
         {
             this.userService = userService;
         }
@@ -23,7 +23,7 @@ namespace VapeShop.Web.Controllers
 
         public async Task<IActionResult> LoginIn(LoginUserResponse response)
         {
-            var user = await userService.Get(response.Phone);
+            var user = await userService.GetByPhone(response.Phone);
 
             if (user == null)
             {
@@ -44,15 +44,18 @@ namespace VapeShop.Web.Controllers
             return View("..\\Account\\LoginStep2" , req1);
         }
 
-        public IActionResult LoginStep2(LoginUserResponse response)
+        public async Task<IActionResult> LoginStep2(LoginUserResponse response)
         {
+            var user = await userService.GetById(response.Id);
+            await userService.Authorization(user);
+            var usr = await userService.GetUser();
+
             return View("..\\Home\\Index");
         }
 
         public async Task<IActionResult> RegisterStep2(RegisterUserResponse response)
         {
             var user = VapeShop.Core.Models.User.New(
-                Guid.NewGuid(),
                 response.FirstName,
                 response.Name,
                 response.LastName,
@@ -60,7 +63,7 @@ namespace VapeShop.Web.Controllers
                 response.DateBithDay,
                 DateTime.Now);
 
-            await userService.Register(user);
+            await userService.Add(user);
 
             return View("..\\Home\\Index");
         }

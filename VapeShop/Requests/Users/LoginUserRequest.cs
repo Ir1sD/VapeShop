@@ -13,7 +13,7 @@ namespace VapeShop.Web.Requests.Users
         [Required(ErrorMessage = "Вы точно что то забыли")]
         [StringLength(maximumLength: User.LENGTH_CODE , MinimumLength = User.LENGTH_CODE , ErrorMessage = "Что то не так")]
         public string Code { get; set; } = string.Empty;
-        public Guid Id {  get; set; }
+        public long Id { get; set; }
 
     }
 }

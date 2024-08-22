@@ -9,7 +9,8 @@ namespace VapeShop.Data.Repositories
 {
     public class UsersRepository : IUsersRepository
     {
-        private ApplicationContext _context;
+        private readonly ApplicationContext _context;
+       
 
         public UsersRepository(ApplicationContext context) 
         {
@@ -23,7 +24,7 @@ namespace VapeShop.Data.Repositories
         {
             var users = await _context.Users
                 .AsNoTracking()
-                .Select(c => User.New(c.Id, c.FirstName, c.Name, c.LastName, c.Phone , c.DateBithDay , c.DateReg))
+                .Select(c => User.New(c.FirstName, c.Name, c.LastName, c.Phone , c.DateBithDay , c.DateReg , c.Id))
                 .ToListAsync();
 
             return users;
@@ -33,7 +34,7 @@ namespace VapeShop.Data.Repositories
         /// Добавляет нового пользователя
         /// </summary>
         /// <param name="user">Объект юзера</param>
-        public async Task Register(User user)
+        public async Task Add(User user)
         {
             var usr = new UserEntity
             {
@@ -54,7 +55,7 @@ namespace VapeShop.Data.Repositories
         /// Возвращает пользователя по номеру телефона или null
         /// </summary>
         /// <param name="Phone">Номер телефона</param>
-        public async Task<User> Get(string Phone)
+        public async Task<User> GetByPhone(string Phone)
         {
             var user = await _context.Users
                 .AsNoTracking()
@@ -63,13 +64,39 @@ namespace VapeShop.Data.Repositories
             if (user is null) return null;
 
             var usr = User.New(
-                user.Id,
                 user.FirstName,
                 user.Name,
                 user.LastName,
                 user.Phone,
                 user.DateBithDay,
-                user.DateReg);
+                user.DateReg,
+                user.Id
+                );           
+
+            return usr;
+        }
+
+        /// <summary>
+        /// Возвращает пользователя по Id или null
+        /// </summary>
+        /// <param name="Phone">Номер телефона</param>
+        public async Task<User> GetById(long UserId)
+        {
+            var user = await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Id == UserId);
+
+            if (user is null) return null;
+
+            var usr = User.New(
+                 user.FirstName,
+                 user.Name,
+                 user.LastName,
+                 user.Phone,
+                 user.DateBithDay,
+                 user.DateReg,
+                 user.Id
+                 );
 
             return usr;
         }

@@ -8,21 +8,33 @@ var builder = WebApplication.CreateBuilder(args);
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
+builder.Services.AddAuthentication("CookieAuth")
+           .AddCookie("CookieAuth", options =>
+           {
+               options.LoginPath = "/Account/LoginView"; // путь к странице входа
+               options.LogoutPath = ""; // путь к странице выхода
+           });
+
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllersWithViews();
+
+////////////////////////
 
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-builder.Services.AddControllersWithViews();
+///////////////////////////
+
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

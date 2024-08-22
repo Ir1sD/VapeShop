@@ -24,9 +24,11 @@ namespace VapeShop.Data.Migrations
 
             modelBuilder.Entity("VapeShop.Data.Entities.UserEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("DateBithDay")
                         .HasColumnType("datetime2");
